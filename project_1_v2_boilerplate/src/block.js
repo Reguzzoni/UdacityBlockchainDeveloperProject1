@@ -58,7 +58,7 @@ class Block {
                 
             // Returning the Block is valid
             //console.log("Current block is valid");
-            resolve(blockHashCurrent !== blockHashRecalculated);
+            resolve(blockHashCurrent === blockHashRecalculated);
         });
     }
 

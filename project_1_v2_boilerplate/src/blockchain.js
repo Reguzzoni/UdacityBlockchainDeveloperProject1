@@ -91,7 +91,7 @@ class Blockchain {
             currentBlockchain.chain.push(newBlock);
             currentBlockchain.height = currentHeight + 1;
             
-            let isValidate = await block.validate();
+            let isValidate = await self.validateChain();
             //console.log(`isValidate : ${isValidate}`);
 
             if(isValidate) {
@@ -284,7 +284,10 @@ class Blockchain {
                 
                 previousHash = block.hash;
             }
+            
+            resolve(errorLog);
         });
+
     }
 
 }
